@@ -11,11 +11,13 @@
   "dependencies": {
     "expo": "^54.0.37",
     "expo-status-bar": "~3.0.9",
+    "expo-updates": "~29.0.20",
     "react": "19.1.0",
     "react-native": "0.81.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "eas-cli": "^23.1.0"
   },
   "private": true
 }
