@@ -8,7 +8,7 @@ const LINES = [
   [0, 4, 8], [2, 4, 6],
 ];
 
-/** Tra ve { mark, line } khi co nguoi thang, khong thi mark = null. */
+/** Tra ve { mark, line }; chua ai thang thi mark = null. */
 export function findWinner(cells) {
   for (const line of LINES) {
     const [a, b, c] = line;
@@ -35,11 +35,7 @@ export default function App() {
     setXNext(!xNext);
   };
 
-  const status = winner
-    ? `${winner} thắng rồi! 🎉`
-    : full
-    ? "Hoà nhau 🤝"
-    : `Tới lượt ${xNext ? "X" : "O"}`;
+  const status = winner ? `${winner} thắng rồi! 🎉` : full ? "Hoà nhau 🤝" : `Tới lượt ${xNext ? "X" : "O"}`;
 
   return (
     <View style={styles.screen}>
@@ -59,13 +55,7 @@ export default function App() {
         ))}
       </View>
 
-      <Pressable
-        style={styles.reset}
-        onPress={() => {
-          setCells(EMPTY);
-          setXNext(true);
-        }}
-      >
+      <Pressable style={styles.reset} onPress={() => { setCells(EMPTY); setXNext(true); }}>
         <Text style={styles.resetText}>Chơi lại</Text>
       </Pressable>
     </View>
@@ -77,10 +67,7 @@ const styles = StyleSheet.create({
   title: { color: "#fff", fontSize: 34, fontWeight: "800" },
   status: { color: "#b9b4d0", fontSize: 18 },
   grid: { width: 306, flexDirection: "row", flexWrap: "wrap", gap: 6 },
-  cell: {
-    width: 96, height: 96, borderRadius: 18, backgroundColor: "#241f38",
-    alignItems: "center", justifyContent: "center",
-  },
+  cell: { width: 96, height: 96, borderRadius: 18, backgroundColor: "#241f38", alignItems: "center", justifyContent: "center" },
   cellWin: { backgroundColor: "#3d7a4f" },
   mark: { fontSize: 52, fontWeight: "800", color: "#ffd166" },
   markO: { color: "#7ad0ff" },
