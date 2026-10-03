@@ -67,6 +67,14 @@ History uses Conventional Commits, for example
 requests should include a short summary, the commands you ran, and
 screenshots for visible UI changes.
 
+## Ecosystem
+
+See the [huyab.click ecosystem map](https://github.com/nguyenhuy158/kit/blob/main/docs/ECOSYSTEM.md) for how all personal repos connect.
+
+- Kit packages: `@huyab/config` (Biome), reusable CI
+  `nguyenhuy158/kit/.github/workflows/check.yml@v0.1.0`.
+- Talks to: no repo (standalone game, no backend).
+
 ## Agent-Specific Instructions
 
 Keep responses short and focused. If a requirement is unclear, ask before
