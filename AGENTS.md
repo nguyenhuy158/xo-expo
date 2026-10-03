@@ -28,10 +28,18 @@ and are git-ignored; never commit them. Configure native settings through
 ## Build, Test, and Development Commands
 
 - `pnpm install`: install dependencies (pnpm only; never use npm/yarn).
-- `pnpm start`: start the Expo dev server.
+- `pnpm start` / `pnpm dev`: start the Expo dev server.
 - `pnpm ios` / `pnpm android`: build and run the native app (`expo run:*`).
 - `pnpm web`: start the dev server for web.
-- `node selfcheck.mjs`: run the offline win-detection self-check.
+- `pnpm check`: Biome lint (the CI gate; pre-existing findings are warnings).
+- `pnpm lint`: full Biome check (lint + formatting); reports formatting drift.
+- `pnpm format`: apply Biome formatting (`biome format --write .`).
+- `pnpm test`: run `selfcheck.mjs` with Node.
+- `pnpm build`: bundle the JS for iOS with Metro into `dist/`
+  (`expo export --platform ios`); no Xcode needed.
+
+Use `pnpm` for all package commands. CI (`.github/workflows/ci.yml`) runs
+`pnpm install --frozen-lockfile`, `check`, `test`, then `build`.
 
 ## Coding Style & Naming Conventions
 

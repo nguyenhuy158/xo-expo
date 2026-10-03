@@ -6,7 +6,13 @@
     "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "dev": "expo start",
+    "build": "expo export --platform ios --output-dir dist",
+    "check": "biome lint .",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "test": "node selfcheck.mjs"
   },
   "dependencies": {
     "expo": "^54.0.37",
@@ -17,7 +23,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@biomejs/biome": "^2.5.15",
     "eas-cli": "^23.1.0"
   },
-  "private": true
+  "private": true,
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=22"
+  }
 }
